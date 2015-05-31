@@ -2,14 +2,14 @@
     "name": "hyoukageass/pfphpframework",
     "homepage": "https://github.com/hyoukageass/pfphpframework",
     "type": "library",
-    "description": "PHP Class Encoding featuring popular Encoding::toUTF8() function --formerly known as forceUTF8()-- that fixes mixed encoded strings.",
+    "description": "Core library for PF PHP Framework",
     "require": {
         "php": ">=5.3.0"
     },
     "authors": [
         {
-            "name":  "Sebastián Grignoli",
-            "email": "grignoli@gmail.com"
+            "name":  "Pein Freccs",
+            "email": "plants.coordinators@gmail.com"
         }
     ],
     "autoload": {
