@@ -1,0 +1,20 @@
+{
+    "name": "hyoukageass/pf-php-framework",
+    "homepage": "https://github.com/hyoukageass/pf-php-framework",
+    "type": "library",
+    "description": "PF php core library",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "authors": [
+        {
+            "name":  "Pein Freccs",
+            "email": "plants.coordinators@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "ClassAutoloader\\": "autoload/"
+        }
+    }
+}
