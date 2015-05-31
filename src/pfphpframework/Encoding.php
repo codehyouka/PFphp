@@ -37,7 +37,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * @license  Revised BSD
   */
 
-namespace ClassAutoloader;
+namespace pfphpframework;
 
 class Encoding {
 
