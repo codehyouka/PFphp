@@ -12,9 +12,16 @@
             "email": "plants.coordinators@gmail.com"
         }
     ],
-    "autoload": {
+   
+      "autoload": {
+        "classmap": [
+            "src/pfphpframework/libraryloader/CloseLoader.php"
+        ],
+        "files": [
+            "src/Illuminate/Support/helpers.php"
+        ],
         "psr-0": {
-            "pfphpframework\\": "src/"
+           "pfphpframework\\": "src/"
         }
-    }
+    },
 }
