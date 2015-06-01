@@ -5,7 +5,8 @@
     "license": "BSD",
     "description": "Core library for PF PHP Framework",
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "swiftmailer/swiftmailer": "~5.0",
     },
     "authors": [
         {
