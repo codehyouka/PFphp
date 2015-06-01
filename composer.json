@@ -2,6 +2,7 @@
     "name": "hyoukageass/pfphpframework",
     "homepage": "https://github.com/hyoukageass/pfphpframework",
     "type": "library",
+    "license": "BSD",
     "description": "Core library for PF PHP Framework",
     "require": {
         "php": ">=5.3.0"
@@ -17,11 +18,10 @@
         "classmap": [
             "src/pfphpframework/libraryloader/CloseLoader.php"
         ],
-        "files": [
-            "src/Illuminate/Support/helpers.php"
-        ],
+       
         "psr-0": {
            "pfphpframework\\": "src/"
         }
     },
+     "minimum-stability": "dev"
 }
