@@ -4,5 +4,6 @@ namespace PFphp\Version;
 
 final class Version{
     
-     const VERSION = '0.0.1';
+     const Number = '0.0.1';
+     const Name = 'Senaryton';
 }

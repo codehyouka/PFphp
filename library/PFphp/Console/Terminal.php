@@ -4,57 +4,44 @@ namespace PFphp\Console;
 use PFphp\Console\Component\InitLoader;
 use PFphp\Utility\Observer;
 use Symfony\Component\Yaml\Yaml;
-use PFphp\Console\Command\TerminalManager;
+use PFphp\Console\Command\TerminalExec;
 use PFphp\FileManager\Filesystem;
-class Terminal extends TerminalManager{
+use PFphp\Version\Version;
+use PFphp\Console\Details;
+use PFphp\LibraryLoader\Console\Colors;
+
+
+
+class Terminal extends TerminalExec{
     private $extend_method=null;
     private $FileDirectory;
+    private $Colors;
     public function __construct(){
-       $this->ManagerInit();
-       $this->FileDirectory=new Filesystem();
+      parent::__construct();
+      
+
+       $this->Colors=new Colors();
     }
     
+    
     public function init(){
-     // $this->getAction();
-        echo "Terminal test :".$this->getCommand()." \n";
-  //      echo $this->FileDirectory->getVendorFileName("Commandline.yml")."\n";
-        //$files=$this->FileDirectory->getFileName("Commandline12.yml");
+     
+     $name=Version::Name;
+     $version=Version::Number;
+     $str_cmd="Welcome to ";
+     $str_cmd.=$this->Colors->printColoredString($name,"blue")." PHP Framework";
+   //     echo "Default ".$this->Colors->printColoredString($test,"blue")." :".$this->getCommand()." \e[0m \n".Version::Number;
+      //$cls=new $config['pfcms'];
+      $str_cmd.= "\n"; 
+      $str_cmd.= "Version".$this->Colors->printColoredString($version,"yellow"); 
+      $str_cmd.= "\n"; 
+      echo $str_cmd;
+      $this->init_terminal();
+ 
       
-        $this->FileDirectory->setFileContent("Commandline1.yml");
-       $yml = Yaml::parse($this->FileDirectory->getFileContent());
-        print_r($yml);
-//?   $res =       array();
- // $res =Observer::extend( $this ,new InitLoader());
-
-
+    
     }
-     private function tests (){
-       global $argc, $argv;
-        echo "Terminal test";
-//?   $res =       array();
- // $res =Observer::extend( $this ,new InitLoader());
- 
-$init=new InitLoader();
- $data = array('lorem' => 'ipsum', 'dolor' => 'sit');
-        $yml = Yaml::dump($data);
-        $parsed = Yaml::parse($yml);
-     //   $this->assertEquals($data, $parsed);
-//?           print_r($parsed);
- //$this->create();
- 
- print_r($argv);
- echo "== \n";
- print_r($argc);
-   echo "Are you sure you want to do this?  Type 'yes' to continue: ";
-$handle = fopen ("php://stdin","r");
-$line = fgets($handle);
-if(trim($line) != 'yes'){
-    echo "ABORTING!\n";
-    exit;
-}
-echo "\n"; 
-echo "Thank you, continuing...\n";
-    }
+    
     
     public function extend($class=Object){
         

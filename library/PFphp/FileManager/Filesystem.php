@@ -5,52 +5,37 @@ use PFphp\FileManager\FileAdapter;
 
 class Filesystem extends FileAdapter{
     #code
-  private $file_content;
+  protected static $file_content=array(
+                    "1"=>"s1"
+                );
     public function __construct($dirname=__DIR__){
-      $this->init($dirname);
-  parent::__construct();
-    }
+      
+   }
     
-      public function getDirectory(){
+    public function getDirectory(){
         $dir_direcotry=$this->getRootDirectory();
         return $dir_direcotry;
     }
-    public function setFileContent($file=""){
-        if(!file_exists($file)){
-        throw new \Exception("The File (".$file.") doesn`t exists");
-       }else{
-        $this->file_content=$file;
-       }
-    }
-    public function getFileContent($file=""){
-      return file_get_contents($this->file_content);
-    }
-    public function getFileName($file=""){
+    public static function isFileExists($file=""){
        
-       if(!file_exists($file)){
-        throw new \Exception("The File (".$file.") doesn`t exists");
-       }
+        return static::isFileFound($file);
+    }
+    
 
-        return $file;
+    public static function getFileContent($file=""){
+      return static::inFileExecute("get_contents",$file);      
     }
-    public function requireFile($file=""){
-      if(!file_exists($file)){
-        throw new \Exception("The File (".$file.") doesn`t exists");
-       }
+    
+    public static  function requireFile($file=""){
+        return static::inFileExecute("require",$file);
     }
-    public function includeFile($file=""){
-       if(!file_exists($file)){
-        throw new \Exception("The File (".$file.") doesn`t exists");
-       }
+    public static function includeFile($file=""){
+        return static::inFileExecute("include",$file);
     }
-    public function requireOnceFile($file=""){
-        if(!file_exists($file)){
-        throw new \Exception("The File (".$file.") doesn`t exists");
-       }
+    public static function requireOnceFile($file=""){
+        return static::inFileExecute("require_once",$file);
     }
-    public function includeOnceFile($file=""){
-        if(!file_exists($file)){
-          throw new \Exception("The File (".$file.") doesn`t exists");
-        }
+    public static function includeOnceFile($file=""){
+        return static::inFileExecute("include_once",$file);
     }
 }
