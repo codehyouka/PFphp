@@ -12,14 +12,14 @@
  * @author pein
  */
 namespace PFphp\Foundation\System\Bootstrap;
-use PFphp\Console\Config\TerminalSetting;
+use PFphp\Console\Config\TerminalCommandSetting;
 use PFphp\MVC\Initialize\Loader\ApplicationConfig;
 
 class SystemBootCreate {
     //put your code here
-     private $terminal;
+    private $terminal;
 	public function __construct(){
-            $this->terminal=new TerminalSetting();
+            $this->terminal=new TerminalCommandSetting();
            
 	}
     public function build(){

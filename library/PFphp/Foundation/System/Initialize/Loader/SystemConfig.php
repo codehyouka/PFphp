@@ -23,6 +23,6 @@ class SystemConfig extends SystemConfigAssist implements SystemDesignInterface{
          public function verify(){
         //     $this->designInterface->setVerify("SystemConfig");
              echo "SystemConfig:verify \n";
-             $this->designInterface->verify();
+             $this->designInterface->verify(); 
         }
 }

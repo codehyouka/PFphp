@@ -20,6 +20,7 @@ class ApplicationConfig extends ApplicationSetup implements SystemDesignInterfac
 	public function run(){
             
             $this->CreateRootDirectory();
+            $this->CreateConfigFile();
             $status=$this->getStatus();
             if(count($status['generated']))
                 $this->setVerify("ApplicationConfig");

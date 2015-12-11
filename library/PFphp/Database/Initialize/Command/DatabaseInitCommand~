@@ -1,0 +1,25 @@
+<?php
+
+use PFphp\Console\Interfaces\Initialize\FrameworkCommand;
+use PFphp\Console\Initialize\System\Component\CommandSystemReview;
+
+class DatabaseInitCommand extends CommandSystemReview implements FrameworkCommand{
+	
+
+	public function __construct(){
+		
+	}
+
+	public function make(){
+
+	}
+	public function generate(){
+
+	}
+	public function verify(){
+
+	}
+	public function help(){
+
+	}
+}

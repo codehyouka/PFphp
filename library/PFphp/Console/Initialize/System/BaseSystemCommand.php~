@@ -1,0 +1,7 @@
+<?php
+namespace PFphp\Console\Interfaces\Initialize\Base;
+use PFphp\Console\Component\TerminalExtension;
+abstract class BaseSystemCommand extends TerminalExtension{
+
+
+}

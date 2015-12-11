@@ -14,14 +14,15 @@
 namespace PFphp\Console\Config;
 use PFphp\FileManager\Asset\Path;
 use PFphp\FileManager\Filesystem;
-class TerminalSetting {
+use PFphp\Console\Component\TerminalManager;
+class TerminalCommandSetting extends TerminalManager{
     //put your code here
     
-    private  function command(){
-       return Filesystem::includeOnceFile(Path::join(__DIR__, "/Setting/TeminalCommand.php"));
+    private  function namepsace(){
+       return Filesystem::includeOnceFile(Path::join(__DIR__, "/Setting/TeminalNamespace.php"));
     }
-      public  function getSystemCommand(){
-       return $this->command()['system_command'];
+      public  function getSystemNamepsace(){
+       return $this->namepsace()['system_default'];
     }
     
 }

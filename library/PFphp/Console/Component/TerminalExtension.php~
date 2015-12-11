@@ -1,6 +1,7 @@
 <?php
 namespace PFphp\Console\Component;
-
+use PFphp\FileManager\Filesystem;
+use PFphp\FileManager\DirectoryStructure;
 abstract class TerminalExtension{
 
 
@@ -19,7 +20,7 @@ abstract class TerminalExtension{
              
              $arg['active']=false;
              $arg['comand']='help';
-      //       $arg['namespace']='defaut';
+             $arg['namespace']='defaut';
              if($argc>1){
                 $arg['comand']=$argv[1];
                 $arg['active']=true;

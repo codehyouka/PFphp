@@ -2,11 +2,11 @@
 namespace PFphp\FileManager\Compose;
 use PFphp\FileManager\DirectoryStructure;
 use PFphp\FileManager\Filesystem;
-
+use PFphp\FileManager\Asset\Path;
 class ManagerGenerateFile{
 
     private $main_path;
-    private $main_root_path;
+    private $is_content_update;
     private $main_file;
     private $main_file_content;
     private $main_status;
@@ -26,7 +26,7 @@ class ManagerGenerateFile{
 		$this->is_path=true;
                 $this->content="<?php";
 
-		
+		$this->is_content_update=true;
 	}
 
 	public function isVendorDirectory($bool=false){
@@ -36,6 +36,9 @@ class ManagerGenerateFile{
 	}
         public function isPath($bools=true){
 		$this->is_path=$bools;
+	}
+        public function isContentRewrite($bools=true){
+		$this->is_content_update=$bools;
 	}
 	public function setPath($dir=""){
 		$this->main_path=$this->main_path;
@@ -54,15 +57,21 @@ class ManagerGenerateFile{
 					"path"=>$this->main_path
                         			);
 		if($this->is_path)
-		$file_path=$this->main_status['path']."".$this->main_status['file'];
+		$file_path=Path::join ($this->main_status['path'],$this->main_status['file']);
                 else
                     $file_path=$this->main_status['file'];
 		if(Filesystem::isFileExists($file_path)){
-                        $files=fopen($file_path,"w");
-			fwrite($files,$this->content);
-			fclose($files);
+                    if($this->is_content_update==true){
+                         $files=fopen($file_path,"w");
+						fwrite($files,$this->content);
+						fclose($files);
                           $this->main_status["file_status"]="File Update";
-			  $this->main_status["generate_status"]="File Update";
+			  			  $this->main_status["generate_status"]="File Update";
+                    }else{
+                        $this->main_status["file_status"]="Disable Update File ";
+						$this->main_status["generate_status"]="Disable Update File ";
+                    }
+                       
 
 		}else{
 

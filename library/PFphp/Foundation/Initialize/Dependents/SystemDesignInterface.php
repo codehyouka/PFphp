@@ -7,6 +7,6 @@ interface SystemDesignInterface{
 
 	public function generate();
 	public function run();
-        public function verify();
+    public function verify();
         
 } 

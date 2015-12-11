@@ -1,6 +1,6 @@
 <?php
 namespace PFphp\Console\Initialize\System;
-use PFphp\Console\Initialize\System\SystemInitializeCoreBase;
+use PFphp\Console\Initialize\System\Base\SystemInitializeCoreBase;
 use PFphp\Console\Config\TerminalSetting;
 
 use PFphp\MVC\Initialize\Loader\ApplicationConfig;

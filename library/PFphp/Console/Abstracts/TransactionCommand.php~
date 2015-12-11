@@ -7,9 +7,5 @@ Abstract class TransactionCommand extends FrameworkCommand{
 	public function make(){
 
 	}
-
-	public function help(){
-
-	}
         
 }    

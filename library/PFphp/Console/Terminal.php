@@ -30,8 +30,7 @@ class Terminal extends TerminalExec{
      $version=Version::Number;
      $str_cmd="Welcome to ";
      $str_cmd.=$this->Colors->printColoredString($name,"blue")." PHP Framework";
-   //     echo "Default ".$this->Colors->printColoredString($test,"blue")." :".$this->getCommand()." \e[0m \n".Version::Number;
-      //$cls=new $config['pfcms'];
+  
       $str_cmd.= "\n"; 
       $str_cmd.= "Version".$this->Colors->printColoredString($version,"yellow"); 
       $str_cmd.= "\n"; 
@@ -43,9 +42,7 @@ class Terminal extends TerminalExec{
     }
     
     
-    public function extend($class=Object){
-        
-    }
+  
     
     
 }
